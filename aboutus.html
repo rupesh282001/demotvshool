@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Thiruvalluvar Vidhyashram</title>
+    <link rel="icon" type="image/png" href="image.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        section {
+            animation: fadeUp 0.7s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        }
+
+        .underline-effect::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 60px;
+            margin: 8px auto 0;
+            background-color: #2563eb;
+            border-radius: 9999px;
+        }
+
+        /* Mobile menu animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="text-white py-4 shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Left: Logo + School Name -->
+            <div class="flex items-center space-x-4">
+                <div class="bg-white rounded-xl shadow-md p-1 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
+                    <img src="image.png" alt="School Logo" class="max-h-full max-w-full object-contain" />
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                    <span class="font-bold text-lg inline-block whitespace-nowrap">
+                        THIRUVALLUVAR VIDHYASHRAM
+                    </span>
+                    <span class="hidden md:inline-block text-gray-300 whitespace-nowrap text-xs">
+                        | CBSE SCHOOL
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right: Menu button (mobile) -->
+            <button id="menuToggle"
+                    class="md:hidden text-white text-3xl focus:outline-none"
+                    aria-label="Toggle menu">
+                ☰
+            </button>
+
+            <!-- Navigation (desktop) -->
+            <nav id="mainNav"
+                 class="hidden md:flex space-x-6 text-sm font-medium transition-all duration-300">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="blog.html" class="hover:text-yellow-300">Gallery</a>
+                <a href="aboutus.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-400">About Us</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation (hidden by default) -->
+        <div id="mobileNav"
+             class="hidden flex-col bg-blue-900 text-white space-y-3 px-6 py-4 md:hidden text-sm font-medium">
+            <a href="index.html" class="hover:text-yellow-300 block">Home</a>
+            <a href="blog.html" class="hover:text-yellow-300 block">Gallery</a>
+            <a href="aboutus.html" class="hover:text-yellow-300 font-semibold border-b-2 border-yellow-400 block">About Us</a>
+            <a href="contact.html" class="hover:text-yellow-300 block">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        document.getElementById("menuToggle").addEventListener("click", () => {
+            document.getElementById("mobileNav").classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-20 text-center shadow-lg">
+        <h3 class="text-4xl font-extrabold mb-4 underline-effect">Empowering Young Minds</h3>
+        <p class="text-blue-100 max-w-3xl mx-auto text-lg leading-relaxed">
+            Empowering young minds through excellence in education.<br />
+            Our Vidhyashram attracts learners committed to integrity, academic performance, and leadership —
+            nurturing goal-oriented thinkers and compassionate citizens.
+        </p>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-10 underline-effect">Why Choose Us</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover-card">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Interactive Learning</h4>
+                    <p class="text-sm text-gray-700">Fostering curiosity through practical, engaging classroom experiences.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover-card">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Skilled Personnel</h4>
+                    <p class="text-sm text-gray-700">Dedicated teachers who inspire, mentor, and shape the next generation.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover-card">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Digital Resources</h4>
+                    <p class="text-sm text-gray-700">Smart classrooms and technology-enabled learning to enhance understanding.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover-card">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Efficient Administration</h4>
+                    <p class="text-sm text-gray-700">A strong system ensuring smooth academic and administrative coordination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-white py-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-12 tracking-wide underline-effect">
+                “Every success has a dedicated team behind it” <span class="text-blue-600">- The Team!</span>
+            </h3>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-blue-100">
+                    <h4 class="text-xl font-semibold text-blue-800 mb-2 group-hover:text-blue-600 transition-all">Dr. Jayasankar K</h4>
+                    <p class="text-gray-600 font-medium">Correspondent</p>
+                    <div class="mt-4 w-12 h-1 bg-blue-600 mx-auto rounded-full group-hover:w-24 transition-all duration-300"></div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-blue-100">
+                    <h4 class="text-xl font-semibold text-blue-800 mb-2 group-hover:text-blue-600 transition-all">Ms. Sujatha Jayasankar</h4>
+                    <p class="text-gray-600 font-medium">Joint Correspondent</p>
+                    <div class="mt-4 w-12 h-1 bg-blue-600 mx-auto rounded-full group-hover:w-24 transition-all duration-300"></div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-blue-100">
+                    <h4 class="text-xl font-semibold text-blue-800 mb-2 group-hover:text-blue-600 transition-all">Mrs. Vanitha N</h4>
+                    <p class="text-gray-600 font-medium">Principal & CEO</p>
+                    <div class="mt-4 w-12 h-1 bg-blue-600 mx-auto rounded-full group-hover:w-24 transition-all duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-100 to-blue-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white shadow-lg p-8 rounded-2xl hover-card border border-blue-100">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 underline-effect">Our Vision</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        “To uproot the education poverty and to develop a sphere of confidence to become responsible citizens,
+                        who seek to achieve their full potential.”
+                    </p>
+                </div>
+                <div class="bg-white shadow-lg p-8 rounded-2xl hover-card border border-blue-100">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 underline-effect">Our Mission</h3>
+                    <ul class="text-gray-700 text-left list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Provide a safe, joyous space where everyone is known and valued.</li>
+                        <li>Encourage individuality, responsibility, and respect inside and outside campus.</li>
+                        <li>Equip young people with the mindset and skills to thrive globally.</li>
+                        <li>Build inclusive learning that celebrates diversity and personal growth.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+        © 2025 Thiruvalluvar Vidhyashram School. All Rights Reserved.
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

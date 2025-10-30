@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blogs | Thiruvalluvar Vidhyashram</title>
+    <link rel="icon" href="image.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #fff;
+            color: #0f172a;
+        }
+
+        .underline-effect::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 80px;
+            margin: 8px auto 0;
+            background: #2563eb;
+            border-radius: 9999px;
+        }
+
+        .card {
+            background: linear-gradient(180deg,#fbfdff,#eef6ff);
+            border: 1px solid rgba(37,99,235,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform .28s ease, box-shadow .28s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(2,6,23,0.08);
+            }
+        /* small helper so images keep consistent size */
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (min-width:1024px) {
+            .card-img {
+                height: 240px
+            }
+        }
+        /* mobile nav simple transition */
+        #mobileNav {
+            transition: all .28s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- header -->
+    <header class="text-white" style="background: linear-gradient(135deg,#1e3a8a,#2563eb);">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="bg-white rounded-2xl p-2 shadow-sm">
+                    <img src="image.png" alt="logo" class="h-10 w-auto object-contain">
+                </div>
+                <div>
+                    <div class="font-bold text-lg">THIRUVALLUVAR VIDHYASHRAM</div>
+                    <div class="text-xs text-white/70">| CBSE SCHOOL</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex gap-6 text-sm">
+                    <a href="index.html" class="hover:text-yellow-300">Home</a>
+                    <a href="aboutus.html" class="hover:text-yellow-300">About</a>
+                    <a href="blog.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-400">Blogs</a>
+                    <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+                </nav>
+
+                <!-- mobile toggle -->
+                <button id="menuToggle" class="md:hidden text-2xl p-1" aria-label="menu">☰</button>
+            </div>
+        </div>
+
+        <!-- mobile nav -->
+        <div id="mobileNav" class="hidden md:hidden bg-blue-900 text-white px-6 py-4">
+            <a href="index.html" class="block py-2">Home</a>
+            <a href="aboutus.html" class="block py-2">About</a>
+            <a href="blog.html" class="block py-2 font-semibold">Blogs</a>
+            <a href="contact.html" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- hero -->
+    <section class="py-16 text-center bg-gradient-to-b from-blue-50 via-white to-blue-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800">Our Blog Highlights</h1>
+            <div class="underline-effect"></div>
+            <p class="text-gray-600 mt-6">It acts as a central platform to communicate important information to students, parents, and faculty members. Announcements about events, policy changes, and achievements can be easily shared and accessed.</p>
+        </div>
+    </section>
+
+    <!-- blog grid -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- 1 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">25 Jun, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">School Opening</h3>
+                    <p class="text-gray-600 mt-3">“May this inauguration serve as a reminder of our dedication to providing quality education and shaping the future leaders of tomorrow.”</p>
+                </div>
+                <!-- use school_welcome.png (replace if your filename differs) -->
+                <img src="school_welcome.png" alt="School Opening" class="card-img">
+            </article>
+
+            <!-- 2 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">08 Sep, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Thrive — The First Gathering 2023</h3>
+                    <p class="text-gray-600 mt-3">“Today, we plant the seeds of knowledge and watch as our school grows into a place where dreams take flight.”</p>
+                </div>
+                <!-- likely file: Thiriv.png or Thiriv.* -->
+                <img src="Thiriv.png" alt="Thrive Gathering" class="card-img">
+            </article>
+
+            <!-- 3 -->
+            <article class="card">
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-blue-800">Happy Vinayagar Chaturthi!</h3>
+                    <p class="text-gray-600 mt-3">“Wishing you and your family a blessed Vinayagar Chaturthi! May Lord Ganesha bless you with wisdom and strength.”</p>
+                </div>
+                <img src="vinayagar.png" alt="Vinayagar" class="card-img">
+            </article>
+
+            <!-- 4 -->
+            <article class="card">
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-blue-800">Celebration of Special Homam</h3>
+                    <p class="text-gray-600 mt-3">“Homam is believed to purify the environment and bring blessings and spiritual elevation.”</p>
+                </div>
+                <img src="Homam.png" alt="Special Homam" class="card-img">
+            </article>
+
+            <!-- 5 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">24 Oct, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Vijayadashami</h3>
+                    <p class="text-gray-600 mt-3">“A joyous celebration marking the victory of good over evil and the start of new ventures.”</p>
+                </div>
+                <img src="vijayadashami.png" alt="Vijayadashami" class="card-img">
+            </article>
+
+            <!-- 6 -->
+            <article class="card">
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-blue-800">Kalasa Pooja (temple behind school)</h3>
+                    <p class="text-gray-600 mt-3">“Kalasha Pooja invites blessings for auspicious beginnings and harmony in the surroundings.”</p>
+                </div>
+                <img src="kalasa_pooja.png" alt="Kalasa Pooja" class="card-img">
+            </article>
+
+            <!-- 7 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">10 Nov, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Diwali Celebration</h3>
+                    <p class="text-gray-600 mt-3">“A time for joy, sharing, and spreading light fostering unity and positivity.”</p>
+                </div>
+                <img src="Diwali.png" alt="Diwali" class="card-img">
+            </article>
+
+            <!-- 8 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">14 Nov, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Children’s Day Celebration</h3>
+                    <p class="text-gray-600 mt-3">“Children are like buds in a garden and should be lovingly nurtured they are the future.”</p>
+                </div>
+                <img src="childrens_day.png" alt="Children's Day" class="card-img">
+            </article>
+
+            <!-- 9 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">14 Dec, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Mandala Pooja</h3>
+                    <p class="text-gray-600 mt-3">“A sacred ritual marking devotion and readiness for the pilgrim journey.”</p>
+                </div>
+                <img src="Mandala_pooja.jpg" alt="Mandala Pooja" class="card-img">
+            </article>
+
+            <!-- 10 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">22 Dec, 2023</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Christmas Celebration</h3>
+                    <p class="text-gray-600 mt-3">“A season of joy, connection, and making warm memories with our school family.”</p>
+                </div>
+                <img src="Christmascelebration.jpeg" alt="Christmas" class="card-img">
+            </article>
+
+            <!-- 11 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">13 Jan, 2024</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Pongal Celebration</h3>
+                    <p class="text-gray-600 mt-3">“A harvest festival celebrating life, gratitude and community spirit.”</p>
+                </div>
+                <img src="Pongal.jpg" alt="Pongal" class="card-img">
+            </article>
+
+            <!-- 12 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">26 Jan, 2024</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Republic Day Celebration</h3>
+                    <p class="text-gray-600 mt-3">“Honouring India’s constitution a day of pride, unity and patriotic spirit.”</p>
+                </div>
+                <img src="Republic.jpg" alt="Republic Day" class="card-img">
+            </article>
+
+            <!-- 13 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">03 Feb, 2024</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Mega Sports Meet</h3>
+                    <p class="text-gray-600 mt-3">“A day of competition and school spirit — students showcasing teamwork, skill and sportsmanship.”</p>
+                </div>
+                <!-- replace MegaSports.png with your actual filename if different -->
+                <img src="Sports.jpg" alt="Mega Sports Meet" class="card-img">
+            </article>
+
+            <!-- 14 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">01 Mar, 2024</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">Tempz League Gathering 2024</h3>
+                    <p class="text-gray-600 mt-3">“The league returns with thrilling matches and unforgettable moments for our students.”</p>
+                </div>
+                <!-- replace TempzLeague.png with your actual filename if different -->
+                <img src="tlg.jpg" alt="Tempz League Gathering" class="card-img">
+            </article>
+
+            <!-- 15 -->
+            <article class="card">
+                <div class="p-6">
+                    <time class="text-sm text-gray-500">11 Mar, 2024</time>
+                    <h3 class="text-lg font-semibold text-blue-800 mt-2">
+                        VIBGYOR'24
+                    </h3>
+                    <p class="text-gray-600 mt-3">“Annual day celebrations a showcase of talent, learning and the creative spirit of our students.”</p>
+                </div>
+                <!-- replace vibgyor24.png with your actual filename if different -->
+                <img src="annualday.jpg" alt="VIBGYOR'24" class="card-img">
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        © 2025 Thiruvalluvar Vidhyashram CBSE School. All Rights Reserved.
+    </footer>
+
+    <script>
+        // mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

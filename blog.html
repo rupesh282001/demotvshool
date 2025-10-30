@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Thiruvalluvar Vidhyashram</title>
+    <link rel="icon" type="image/png" href="image.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            filter: brightness(110%);
+        }
+
+        /* Lightbox overlay */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            padding: 1rem;
+        }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+        /* Transparent effect container */
+        .lightbox-content {
+            backdrop-filter: blur(10px); /* Keeps the soft blur effect */
+            background: transparent; /* Fully see-through background */
+            border-radius: 1rem;
+            border: none; /* Remove border for clean look */
+            padding: 2rem;
+            max-width: 900px;
+            width: 95%;
+            text-align: center;
+            position: relative;
+            box-shadow: none; /* Optional: remove shadow */
+            color: white;
+        }
+
+
+        .lightbox h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .main-image {
+            width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            transition: opacity 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+            .nav-btn:hover {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .thumbs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+            .thumbs img {
+                width: 60px;
+                height: 60px;
+                border-radius: 0.5rem;
+                border: 2px solid transparent;
+                transition: all 0.2s ease;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+                .thumbs img:hover,
+                .thumbs img.active {
+                    border-color: #60a5fa;
+                    transform: scale(1.1);
+                }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .close-btn:hover {
+                color: red;
+            }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <!-- Header -->
+    <header class="text-white py-4 shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Left: Logo + School Name -->
+            <div class="flex items-center space-x-4">
+                <div class="bg-white rounded-xl shadow-md p-1 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
+                    <img src="image.png" alt="School Logo" class="max-h-full max-w-full object-contain" />
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                    <span class="font-bold text-lg inline-block whitespace-nowrap">
+                        THIRUVALLUVAR VIDHYASHRAM
+                    </span>
+                    <span class="hidden md:inline-block text-gray-300 whitespace-nowrap text-xs">| CBSE SCHOOL</span>
+                </div>
+            </div>
+
+            <!-- Right: Menu button (mobile) -->
+            <button id="menuToggle"
+                    class="md:hidden text-white text-3xl focus:outline-none"
+                    aria-label="Toggle menu">
+                ☰
+            </button>
+
+            <!-- Navigation (desktop) -->
+            <nav id="mainNav"
+                 class="hidden md:flex space-x-6 text-sm font-medium transition-all duration-300">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="#" class="hover:text-yellow-300 font-semibold border-b-2 border-yellow-400">Gallery</a>
+                <a href="aboutus.html" class="hover:text-yellow-300 block">About Us</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation (hidden by default) -->
+        <div id="mobileNav"
+             class="hidden flex-col bg-blue-900 text-white space-y-3 px-6 py-4 md:hidden text-sm font-medium">
+            <a href="index.html" class="hover:text-yellow-300 block">Home</a>
+            <a href="#" class="hover:text-yellow-300 font-semibold border-b-2 border-yellow-400 block">Gallery</a>
+            <a href="aboutus.html" class="hover:text-yellow-300 block">About Us</a>
+            <a href="admission.html" class="hover:text-yellow-300 block">Admission</a>
+            <a href="contact.html" class="hover:text-yellow-300 block">Contact</a>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #1e3a8a, #2563eb);" class="text-white py-16 text-center shadow-md">
+        <h3 class="text-3xl sm:text-4xl font-extrabold mb-1">Our School Gallery</h3>
+        <p class="text-blue-100 max-w-xl mx-auto text-sm sm:text-base">
+            A glimpse into our vibrant campus life — where learning, fun, and excellence come together.
+            These moments capture our students’ joy, achievements, and everyday discoveries that make Thiruvalluvar Vidhyashram more than just a school — a second home.
+        </p>
+    </section>
+
+    <!-- Gallery Grid -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- Classroom -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer" onclick="openGallery('classroom')">
+                    <img src="newad10.jpg" alt="Classroom Activity" class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm group-hover:text-blue-700 transition">
+                        Classroom Activity
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer" onclick="openGallery('yoga')">
+                    <img src="newad9.jpg" alt="Yoga Session" class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm group-hover:text-blue-700 transition">
+                        Yoga & Meditation
+                    </div>
+                </div>
+
+                <!-- sports -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer" onclick="openGallery('sports')">
+                    <img src="newad8.jpg" alt="Sports" class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm group-hover:text-blue-700 transition">
+                        Sports
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox (used for all categories dynamically) -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeGallery()">&times;</span>
+            <h2 id="galleryTitle">Gallery</h2>
+            <img id="mainImage" src="image.png" class="main-image" alt="Gallery Image">
+
+            <div class="nav-btn prev" onclick="prevImage()">&#10094;</div>
+            <div class="nav-btn next" onclick="nextImage()">&#10095;</div>
+
+            <div id="thumbnailContainer" class="thumbs"></div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+        © 2025 Thiruvalluvar Vidhyashram School. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+
+        menuBtn.addEventListener("click", () => {
+            mobileNav.classList.toggle("hidden");
+        });
+    </script>
+
+
+    <!-- JavaScript for Lightbox -->
+    <script>
+        // ✅ Only one image per folder — no need for extension looping
+        const galleries = {
+            classroom: ["gallery/classroom/1.jpeg"],
+            yoga: ["gallery/yoga/1.jpeg"],
+            sports: ["gallery/sports/1.jpg"]
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        const lightbox = document.getElementById("lightbox");
+        const mainImage = document.getElementById("mainImage");
+        const galleryTitle = document.getElementById("galleryTitle");
+        const thumbnailContainer = document.getElementById("thumbnailContainer");
+
+        function openGallery(category) {
+            currentGallery = galleries[category];
+            currentIndex = 0;
+            galleryTitle.textContent =
+                category.charAt(0).toUpperCase() + category.slice(1).replace(/([A-Z])/g, ' $1');
+            updateImage();
+            populateThumbnails();
+            lightbox.classList.add("active");
+            document.addEventListener("keydown", handleKeyNavigation);
+        }
+
+        function closeGallery() {
+            lightbox.classList.remove("active");
+            document.removeEventListener("keydown", handleKeyNavigation);
+        }
+
+        function updateImage() {
+            mainImage.style.opacity = 0;
+            setTimeout(() => {
+                mainImage.src = currentGallery[currentIndex];
+                mainImage.style.opacity = 1;
+            }, 200);
+
+            const thumbs = thumbnailContainer.querySelectorAll("img");
+            thumbs.forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === currentIndex);
+            });
+        }
+
+        // ✅ Only one image — no iteration needed
+        function populateThumbnails() {
+            thumbnailContainer.innerHTML = "";
+            const img = currentGallery[0];
+
+            if (img) {
+                const thumb = document.createElement("img");
+                thumb.src = img;
+                thumb.onclick = () => {
+                    currentIndex = 0;
+                    updateImage();
+                };
+                thumbnailContainer.appendChild(thumb);
+            }
+
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateImage();
+        }
+
+        // ✅Keyboard navigation (←, →, Esc)
+        function handleKeyNavigation(e) {
+            if (e.key === "ArrowRight") nextImage();
+            else if (e.key === "ArrowLeft") prevImage();
+            else if (e.key === "Escape") closeGallery();
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Features | Thiruvalluvar Vidhyashram</title>
+    <link rel="icon" type="image/png" href="image.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e3a8a;
+        }
+
+        section {
+            animation: fadeUp 0.8s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .underline-effect::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 80px;
+            margin: 8px auto 0;
+            background-color: #1e40af;
+            border-radius: 9999px;
+        }
+
+        #mobileNav {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white flex flex-col">
+
+    <!-- Header -->
+    <header class="text-white py-4 shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Left: Logo + School Name -->
+            <div class="flex items-center space-x-4">
+                <div class="bg-white rounded-xl shadow-md p-1 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
+                    <img src="image.png" alt="School Logo" class="max-h-full max-w-full object-contain" />
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                    <span class="font-bold text-lg inline-block whitespace-nowrap">
+                        THIRUVALLUVAR VIDHYASHRAM
+                    </span>
+                    <span class="hidden md:inline-block text-gray-300 whitespace-nowrap text-xs">
+                        | CBSE SCHOOL
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none">
+                ☰
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="aboutus.html" class="hover:text-yellow-300">About Us</a>
+                <a href="blog.html" class="hover:text-yellow-300">Gallery</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+                <a href="academicRules.html" class="hover:text-yellow-300">Academic Rules</a>
+                <a href="ourfeatures.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-400">Our Features</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileNav" class="hidden flex-col bg-blue-900 text-white px-6 py-4 space-y-3 md:hidden text-sm font-medium">
+            <a href="index.html" class="hover:text-yellow-300 block">Home</a>
+            <a href="aboutus.html" class="hover:text-yellow-300 block">About Us</a>
+            <a href="blog.html" class="hover:text-yellow-300 block">Gallery</a>
+            <a href="contact.html" class="hover:text-yellow-300 block">Contact</a>
+            <a href="academicRules.html" class="hover:text-yellow-300 block">Academic Rules</a>
+            <a href="ourfeatures.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-400">Our Features</a>
+
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="max-w-5xl mx-auto px-6 py-16 text-center">
+        <div class="flex flex-col items-center">
+            <!-- School Logo -->
+            <img src="image.png" alt="School Logo" class="w-24 h-24 mb-6" />
+
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-3">FEATURES OF OUR SCHOOL</h2>
+            <div class="underline-effect mb-12"></div>
+        </div>
+
+        <!-- Features Content -->
+        <div class="text-left space-y-8 leading-relaxed text-gray-700 text-[15px]">
+
+            <div>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Classes Nursery to Grade 9 in co-educational system.</li>
+                    <li>Affiliated with Central Board of Secondary Education.</li>
+                    <li>Qualified and motivated teachers with perfect blend of knowledge, quality, innovation and compassion.</li>
+                    <li>Digital facilities to enable the students to learn well and face the challenges of the ambitious world.</li>
+                    <li>Creates awareness of the rich heritage and culture of our country among students.</li>
+                    <li>Outdoor training programs and adventure camps for students to generate confidence and dynamism in their personality to face the challenges.</li>
+                    <li>Pager method will be followed for assembly and for information purpose.</li>
+                    <li>Special assemblies are also organized with cultural activities on special occasions.</li>
+                    <li>Maintains well-furnished & centrally air-conditioned library which accommodates more than 50 users at a time and has around 1500 books and magazines.</li>
+                    <li>Well-equipped laboratories viz. Science Lab, Computer Science Lab, Mathematics Lab, Language Lab etc.</li>
+                    <li>Every student will be provided the opportunity to participate in various national competitive exams or competitions for their exposure to the greater competitive world.</li>
+                    <li>Personalized guidance and counselling.</li>
+                    <li>Digital classroom facility which initiates smart table where students can learn through the digital screen.</li>
+                    <li>Our school premises are well protected under CCTV surveillance.</li>
+                    <li>The curriculum is rigorous, collaborated with Oxford, and varies according to the grade. Teacher performance is regularly monitored by the management. Both teachers and students strive for excellence in academic and extracurricular activities.</li>
+                    <li>A commitment to excellence with a focus on holistic development, enabling students to understand real-life applications.</li>
+                    <li>Best performance and a student-centered approach to teaching will be recognized and rewarded.</li>
+                    <li>Transport facilities are available with live GPS tracking, enabling effective communication with parents and the management. A female caretaker will be present during transit to ensure safety and security.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2 mt-10">ROBOTICS LAB</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>The high-tech robotics lab will give students an opportunity to make science fiction a reality. The students will be taught to construct and assemble computerized robots in a graded fashion.</li>
+                    <li>After learning the basic assembly of the components of the robot, they will learn to make complex functioning advanced robots.</li>
+                    <li>This gives them a hands-on experience in the world of artificial intelligence.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2 mt-10">Hands On Learning Through Modern Labs</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>At our institution, we provide well-equipped Physics, Chemistry, Computer, and Mathematics Laboratories designed to offer hands-on learning experiences that bridge theory with real-world application. Each lab is furnished with modern instruments, advanced technology, and interactive learning tools to foster experimentation, innovation, and critical thinking among students.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== Empowering Young Minds Section =================== -->
+    <section class="py-20 bg-gradient-to-b from-blue-50 via-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <!-- Title -->
+            <h2 class="text-4xl font-extrabold text-blue-800 mb-4">
+                Empowering Young Minds
+            </h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12 rounded-full"></div>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg mb-16">
+                Empowering students through technology, innovation, and holistic learning to shape a brighter tomorrow.
+            </p>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-700 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-5 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6 4a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">Interactive Learning</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We leverage technology to create engaging and immersive learning experiences for every student.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-700 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-5 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">Digital Resources</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Access a vast range of e-books, online simulations, and educational apps to enhance interactive learning.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-700 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-5 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.657 0 3 1.567 3 3.5S13.657 15 12 15s-3-1.567-3-3.5S10.343 8 12 8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.477 2 2 6.477 2 12c0 2.493 1.21 4.741 3.112 6.192a.75.75 0 01.258.823l-.582 2.09a.75.75 0 001.037.875l2.286-1.052a.75.75 0 01.658 0C10.247 21.781 11.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">Skilled Personnel</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Our teachers foster exploration and innovation, guiding students in research and critical thinking projects.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-700 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-5 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-800 mb-3">Efficient Administration</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Administrative processes are digitalized to streamline attendance, reports, and progress tracking.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-5 text-sm mt-auto w-full">
+        © 2025 Thiruvalluvar Vidhyashram CBSE School. All Rights Reserved.
+    </footer>
+
+    <!-- Mobile Toggle Script -->
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", () => {
+            document.getElementById("mobileNav").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

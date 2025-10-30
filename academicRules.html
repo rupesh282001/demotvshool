@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Academic Rules | Thiruvalluvar Vidhyashram</title>
+    <link rel="icon" type="image/png" href="image.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e3a8a;
+        }
+
+        section {
+            animation: fadeUp 0.8s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .underline-effect::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 80px;
+            margin: 8px auto 0;
+            background-color: #1e40af;
+            border-radius: 9999px;
+        }
+
+        #mobileNav {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white flex flex-col">
+
+    <!-- Header -->
+    <header class="text-white py-4 shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Left: Logo + School Name -->
+            <div class="flex items-center space-x-4">
+                <div class="bg-white rounded-xl shadow-md p-1 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
+                    <img src="image.png" alt="School Logo" class="max-h-full max-w-full object-contain" />
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                    <span class="font-bold text-lg inline-block whitespace-nowrap">
+                        THIRUVALLUVAR VIDHYASHRAM
+                    </span>
+                    <span class="hidden md:inline-block text-gray-300 whitespace-nowrap text-xs">
+                        | CBSE SCHOOL
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none">
+                ☰
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="aboutus.html" class="hover:text-yellow-300">About Us</a>
+                <a href="blog.html" class="hover:text-yellow-300">Gallery</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+                <a href="academicRules.html" class="text-yellow-300 font-semibold border-b-2 border-yellow-400">Academic Rules</a>
+                <a href="ourfeatures.html" class="hover:text-yellow-300 block">Our Features</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileNav" class="hidden flex-col bg-blue-900 text-white px-6 py-4 space-y-3 md:hidden text-sm font-medium">
+            <a href="index.html" class="hover:text-yellow-300 block">Home</a>
+            <a href="aboutus.html" class="hover:text-yellow-300 block">About Us</a>
+            <a href="blog.html" class="hover:text-yellow-300 block">Gallery</a>
+            <a href="contact.html" class="hover:text-yellow-300 block">Contact</a>
+            <a href="academicRules.html" class="text-yellow-300 font-semibold border-l-4 border-yellow-400 pl-2 block">Academic Rules</a>
+            <a href="ourfeatures.html" class="hover:text-yellow-300 block">Our Features</a>
+
+        </div>
+    </header>
+
+    <!-- Academic Rules Section -->
+    <section class="max-w-5xl mx-auto px-6 py-16 text-center">
+        <div class="flex flex-col items-center">
+            <!-- School Logo -->
+            <img src="image.png" alt="School Logo" class="w-24 h-24 mb-6" />
+
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-3">OUR ACADEMIC RULES</h2>
+            <div class="underline-effect mb-12"></div>
+        </div>
+
+        <!-- Rules Content -->
+        <div class="text-left space-y-8 leading-relaxed text-gray-700 text-[15px]">
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">RULES</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>High level of discipline must be followed.</li>
+                    <li>Punctuality and regularity are must in attendance.</li>
+                    <li>Students who are absent the previous day should bring a note of report regarding the leave, in the case of illness leave letter is mandatory.</li>
+                    <li>Student must have 75% of attendance, if the student does not have 75% of attendance is not eligible for the examination.</li>
+                    <li>Students should enter the school campus on time, as per the school schedule.</li>
+                    <li>Students must wear neat and laundered uniforms with perfect accessories of socks, shoes, tie, belt, ribbons. Hair should be neatly combed and tied up.</li>
+                    <li>Every student is required to carry the school identity card each day of the school.</li>
+                    <li>No student is permitted to leave school during school hours without a valid permission slip from the class teacher/ principal.</li>
+                    <li>Students are not allowed to receive private tuitions from the teachers of the school.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">CODE OF BEHAVIOUR</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Students must report any incident of bullying and ragging to the teachers immediately.</li>
+                    <li>Students will not use foul or offensive language.</li>
+                    <li>Students must report to class on time after break or activity periods.</li>
+                    <li>No student is allowed to engage in ragging, either on or off campus.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">PROHIBITIONS</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Students are not allowed to use gadgets inside the campus.</li>
+                    <li>Students are not allowed to defecate in or outside the school premises.</li>
+                    <li>Students are not permitted to bring expensive electronics or other technological gadgets to school. If they do, the administration will take stern action.</li>
+                    <li>Students are not permitted to wear expensive jewellery, watches and other accessories.</li>
+                    <li>Students are cautioned to avoid consuming food from street sellers.</li>
+                    <li>Smoking in the campus is strictly prohibited.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">TRANSPORT</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Damage done even by accident or mistake should be reported immediately to the class teacher, class captain or to the Principal/Vice-Principal/ Headmaster/Headmistress.</li>
+                    <li>Protect and safeguard school properties.</li>
+                    <li>Strict discipline must be maintained in the school bus. Misbehaviour or any damage to the school transport can lead to withdrawal of bus facilities.</li>
+                    <li>Keeping the school buildings and grounds clean and tidy, moving about in a quiet and orderly manner.</li>
+                    <li>Bus service issues or changes to bus routes must be brought to the attention of the school administration.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-5 text-sm mt-auto w-full">
+        © 2025 Thiruvalluvar Vidhyashram CBSE School. All Rights Reserved.
+    </footer>
+
+    <!-- Mobile Toggle Script -->
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", () => {
+            document.getElementById("mobileNav").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

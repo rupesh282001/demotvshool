@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV School | Chennai OMR</title>
+    <!-- Browser Tab Icon -->
+    <link rel="icon" type="image/png" href="image.png">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons (for Nav icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font for general aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Maroon Color to match the image */
+        .bg-maroon-deep {
+            background-color: #1e40af; /* Closer to Red 800 */
+        }
+
+        .text-maroon-deep {
+            color: #991b1b;
+        }
+
+        .border-maroon-deep {
+            border-color: #991b1b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* Style for the select arrow */
+        .select-arrow::after {
+            content: '▼';
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Popup Modal -->
+    <input type="checkbox" id="popup-toggle" class="hidden" checked>
+
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="popup-overlay">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full text-center relative animate-fadeIn">
+
+            <!-- Close Button -->
+            <label for="popup-toggle" class="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold cursor-pointer">&times;</label>
+
+            <!-- Image Section -->
+            <img src="newsAds.png" alt="Admissions Open" class="rounded-t-2xl w-full">
+
+            <!-- Text Section -->
+            <div class="p-5">
+                <h2 class="text-xl font-extrabold text-blue-800 mb-2">Admissions Open!</h2>
+                <p class="text-gray-700 text-sm mb-4">
+                    Apply now and secure your seat for the upcoming academic session.
+                </p>
+                <a href="enroll_popUpPage.html" class="bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition inline-block">
+                    Enroll Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Styling -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* Hide popup when unchecked */
+        #popup-toggle:not(:checked) ~ #popup-overlay {
+            display: none;
+        }
+    </style>
+
+
+    <!-- 1. Top Header (Dark Maroon) -->
+    <header class="text-white py-4 shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center text-xs sm:text-sm">
+            <div class="flex items-center space-x-4">
+
+                <a href="#" class="flex items-center space-x-2">
+
+                    <span class="font-bold text-lg hidden sm:inline-block whitespace-nowrap">THIRUVALLUVAR VIDHYASHRAM</span>
+
+                    <span class="hidden md:inline-block text-gray-300 whitespace-nowrap text-xs">|CBSE SCHOOL</span>
+                </a>
+
+                <!--<button class="flex items-center space-x-1 rounded-full px-2 py-1 bg-white text-red-800 font-semibold transition hover:bg-gray-100 whitespace-nowrap text-xs sm:text-sm ml-4">
+                    <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                    <span>Admissions 2025-26</span>
+                </button>-->
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!--<div class="flex items-center space-x-1 hidden lg:flex whitespace-nowrap">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>9626137777</span>
+                </div>
+                <div class="flex items-center space-x-1 hidden md:flex whitespace-nowrap">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>admin@thiruvalluvarvidhyashram.school</span>
+                </div>-->
+                <button class="rounded-full px-3 py-1 bg-red-600 hover:bg-red-700 transition whitespace-nowrap">
+                    Login
+                </button>
+                <button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-red-800 transition whitespace-nowrap">
+                    Doubt Connect
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Main Navigation (White) -->
+    <nav class="bg-white shadow-md relative z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <div class="flex space-x-4 text-sm font-medium text-gray-700">
+                    <!-- Nav Links -->
+                    <a href="enroll_popUpPage.html" class="py-3 hover:text-red-800 transition hidden md:block">Admissions</a>
+                    <a href="blogs.html" class="py-3 hover:text-red-800 transition hidden lg:block">Blogs</a>
+                    <a href="blog.html" class="py-3 hover:text-red-800 transition hidden lg:block">Gallery</a>
+                    <a href="aboutus.html" class="py-3 hover:text-red-800 transition hidden lg:block">About Us</a>
+                    <a href="contact.html" class="py-3 hover:text-red-800 transition hidden lg:block">Contact</a>
+
+                    <!-- Our School Dropdown -->
+                    <div class="group relative py-3">
+                        <button class="flex items-center hover:text-red-800 transition focus:outline-none">
+                            Our School
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 ease-in-out">
+                            <a href="academicRules.html"
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-800 rounded-t-lg transition">
+                                Academic Rules
+                            </a>
+                            <a href="ourfeatures.html"
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-800 rounded-b-lg transition">
+                                Our Features
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Icon -->
+                <div class="flex items-center">
+                    <button class="p-2 text-gray-500 hover:text-red-800 transition">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+
+    <!-- 3. Breadcrumbs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs text-gray-600">
+        Recognition Code Number <span class="text-maroon-deep font-semibold">: 001-36-S-0019-0626</span>
+    </div>
+
+    <!-- 4. Main Content Section (Maroon Background) -->
+    <main class="pb-12" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-white">
+
+            <!-- Title -->
+            <!-- Title with Logo Above -->
+            <div class="mb-8 text-center">
+                <!-- School Logo Above Title -->
+                <!--<img src="SCHOOL NAME.png" alt="Thiruvalluvar Vidhyashram Logo"
+                     class="mx-auto h-20 sm:h-24 mb-4 brightness-125 drop-shadow-lg">-->
+                <!--Added in line gradient blue color since the logo is also blue we need make the logo visible-->
+                <div class="inline-block bg-white p-3 rounded-2xl shadow-2xl">
+                    <img src="image.png"
+                         alt="Thiruvalluvar Vidhyashram Logo"
+                         class="h-24 sm:h-28 mx-auto">
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl font-extrabold flex justify-center items-center text-center">
+                    <span class="mr-3 text-red-300">
+                        <i data-lucide="play" class="w-6 h-6 rotate-120 fill-current"></i>
+                    </span>
+                    Thiruvalluvar vidhyashram School (CBSE), Chennai OMR, Perungudi
+                </h1>
+            </div>
+
+
+            <!-- Content Grid: Images, Testimonials, and Form -->
+            <div class="lg:flex lg:space-x-8">
+
+                <!-- Left Content Area (Images & Testimonials) -->
+                <div class="lg:w-2/3 space-y-8">
+
+                    <!-- Images Section (3 images side-by-side) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Image 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg h-40 md:h-52 bg-cover bg-center" style="background-image: url('newad10.jpg');">
+                            <div class="h-full w-full bg-black bg-opacity-30 flex items-center justify-center text-xl font-bold p-4">
+                                <!-- Placeholder for image content -->
+                            </div>
+                        </div>
+                        <!-- Image 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg h-40 md:h-52 bg-cover bg-center" style="background-image: url('newad8.jpg');">
+                            <div class="h-full w-full bg-black bg-opacity-30 flex items-center justify-center text-xl font-bold p-4">
+                                <!-- Placeholder for image content -->
+                            </div>
+                        </div>
+                        <!-- Image 3 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg h-40 md:h-52 bg-cover bg-center" style="background-image: url('newad9.jpg');">
+                            <div class="h-full w-full bg-black bg-opacity-30 flex items-center justify-center text-xl font-bold p-4">
+                                <!-- Placeholder for image content -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+
+                        <!-- Testimonial 1 -->
+                        <div class="bg-black bg-opacity-30 p-6 rounded-xl shadow-xl space-y-3">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-extrabold mr-3 text-red-300">''</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm">As a parent, I want my child to experience complete growth.  I'm pleased to see my youngster develop with new technologies.  Happy and thank you, Thiruvalluvar Vidhyashram School.</p>
+                        </div>
+
+                        <!-- Testimonial 2 (Adapted from the image's layout) -->
+                        <div class="bg-black bg-opacity-30 p-6 rounded-xl shadow-xl space-y-3">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-extrabold mr-3 text-red-300">''</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm">Great Bow to the teaching faculty for your Nurturing, Caring, and also for  your exceptional results</p>
+                        </div>
+
+                        <!-- Testimonial 3 (Added the middle testimonial content as a third item) -->
+                        <div class="bg-black bg-opacity-30 p-6 rounded-xl shadow-xl space-y-3 md:col-span-2 lg:col-span-1">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-extrabold mr-3 text-red-300">''</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm">The academics where its not about marks it matters the knowledge in real life experiences.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Form Area -->
+                <div class="lg:w-1/3 mt-8 lg:mt-0">
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-gray-800">
+                        <h2 class="text-lg font-bold mb-4 flex justify-between items-center">
+                            Admissions Open for
+                            <select class="p-1 border border-gray-300 rounded text-sm font-normal focus:border-red-800 focus:ring-red-800">
+                                <option>2025-26</option>
+                                <option>2024-25</option>
+                            </select>
+                        </h2>
+
+                        <form class="grid grid-cols-2 gap-4 text-sm">
+
+                            <!-- Parent Name -->
+                            <div class="col-span-1">
+                                <label for="parentName" class="block font-medium mb-1 text-xs">Parent Name *</label>
+                                <input type="text" id="parentName" placeholder="Parent Name" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                            </div>
+
+                            <!-- Child Name -->
+                            <div class="col-span-1">
+                                <label for="childName" class="block font-medium mb-1 text-xs">Child Name *</label>
+                                <input type="text" id="childName" placeholder="Child Name" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                            </div>
+
+                            <!-- Mobile No -->
+                            <div class="col-span-1">
+                                <label for="mobileNo" class="block font-medium mb-1 text-xs">Mobile No *</label>
+                                <input type="tel" id="mobileNo" placeholder="Mobile No" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-span-1">
+                                <label for="email" class="block font-medium mb-1 text-xs">Email</label>
+                                <input type="email" id="email" placeholder="your@email.com" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                            </div>
+
+                            <!-- Select City -->
+                            <div class="col-span-1 relative select-arrow">
+                                <label for="city" class="block font-medium mb-1 text-xs">Select City *</label>
+                                <select id="city" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                    <option value="">Select City</option>
+                                    <option>Chennai</option>
+                                    <option>Bangalore</option>
+                                </select>
+                            </div>
+
+                            <!-- Select Branch -->
+                            <div class="col-span-1 relative select-arrow">
+                                <label for="branch" class="block font-medium mb-1 text-xs">Select Branch *</label>
+                                <select id="branch" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                    <option value="">TVS Thoraipakkam</option>
+                                    <option>TVS Perungudi</option>
+                                </select>
+                            </div>
+
+                            <!-- Select Grade -->
+                            <div class="col-span-1 relative select-arrow">
+                                <label for="grade" class="block font-medium mb-1 text-xs">Select Grade *</label>
+                                <select id="grade" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                    <option value="">Grade</option>
+                                    <option>Nursery</option>
+                                    <option>LKG</option>
+                                    <option>Class 1</option>
+                                </select>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-span-1">
+                                <button type="submit"
+                                        class="w-full bg-green-600 text-white font-semibold py-2 mt-4 rounded hover:bg-green-700 transition shadow-lg">
+                                    Submit
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- =================== About Us Preview Section =================== -->
+    <section class="py-16 bg-white text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-6 underline-effect">
+                About Thiruvalluvar Vidhyashram
+            </h2>
+
+            <!-- Short Description -->
+            <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed mb-12">
+                Thiruvalluvar Vidhyashram CBSE School is dedicated to nurturing young minds through
+                excellence in education. Our mission is to build confident, responsible, and
+                compassionate learners equipped with the skills to thrive in a global community.
+            </p>
+
+            <!-- Quick Highlights -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover:scale-105 transition-transform border border-blue-100">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Interactive Learning</h4>
+                    <p class="text-sm text-gray-700">Engaging classrooms that encourage curiosity and creativity.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover:scale-105 transition-transform border border-blue-100">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Skilled Faculty</h4>
+                    <p class="text-sm text-gray-700">Dedicated educators shaping confident and value-driven learners.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover:scale-105 transition-transform border border-blue-100">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Digital Resources</h4>
+                    <p class="text-sm text-gray-700">Smart classrooms and innovative teaching tools for modern learning.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow hover:scale-105 transition-transform border border-blue-100">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">Holistic Growth</h4>
+                    <p class="text-sm text-gray-700">Empowering students to achieve academic and personal excellence.</p>
+                </div>
+            </div>
+
+            <!-- See More Button -->
+            <a href="aboutus.html"
+               class="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold rounded-full shadow-md hover:bg-blue-800 transition-all duration-300 hover:scale-105">
+                See More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- =================== Gallery Section =================== -->
+    <section id="gallery" class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-8">
+                Our School Gallery
+            </h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                A glimpse into our vibrant campus life — where learning, fun, and excellence come together.
+                These moments capture our students’ joy, achievements, and everyday discoveries that make
+                Thiruvalluvar Vidhyashram more than just a school — a second home.
+            </p>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- Classroom -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer"
+                     onclick="openGallery('classroom')">
+                    <img src="newad10.jpg" alt="Classroom Activity"
+                         class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm
+                            group-hover:text-blue-700 transition">
+                        Classroom Activity
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer"
+                     onclick="openGallery('yoga')">
+                    <img src="newad9.jpg" alt="Yoga Session"
+                         class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm
+                            group-hover:text-blue-700 transition">
+                        Yoga & Meditation
+                    </div>
+                </div>
+
+                <!-- Sports -->
+                <div class="overflow-hidden rounded-2xl shadow-lg bg-white group cursor-pointer"
+                     onclick="openGallery('sports')">
+                    <img src="newad8.jpg" alt="Sports"
+                         class="w-full h-56 object-cover gallery-img" />
+                    <div class="p-3 text-center text-gray-700 font-semibold text-sm
+                            group-hover:text-blue-700 transition">
+                        Sports
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- See More Button to redirect to blog.html page (Gallery Page) -->
+    <div class="text-center mt-2 mb-2">
+        <a href="blog.html"
+           class="inline-flex items-center gap-2 px-5 py-2 bg-blue-700 text-white font-semibold rounded-full shadow-md hover:bg-blue-800 transition-all duration-300 hover:scale-105">
+            See More
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- =================== Join With Us Section =================== -->
+    <section class="py-16 text-center bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-4">
+                Be Glad to Join With Us
+            </h2>
+            <div class="w-20 h-1 bg-blue-500 mx-auto mb-10 rounded-full"></div>
+
+            <!-- Content Box -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md py-10 px-6 mx-auto max-w-lg border border-blue-100 hover:shadow-lg transition-all duration-300">
+                <h3 class="text-blue-800 text-2xl font-bold mb-6 tracking-wide">More Details</h3>
+                <hr class="border-blue-200 mb-8">
+
+                <!-- Button -->
+                <a href="contact.html"
+                   class="inline-block bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 hover:from-blue-700 hover:to-blue-500 transition-all duration-300">
+                    Connect With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== What the Leader Says Section =================== -->
+    <section class="py-16 bg-gray-50 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-4">
+                What the Leader Says
+            </h2>
+            <div class="w-20 h-1 bg-blue-500 mx-auto mb-10 rounded-full"></div>
+
+            <!-- Leader Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Albert Einstein -->
+                <div class="bg-gradient-to-b from-blue-900 to-blue-800 text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2">Albert Einstein</h3>
+                        <p class="text-yellow-400 font-medium mb-4 uppercase tracking-wide text-sm">
+                            Theoretical Physicist
+                        </p>
+                        <p class="text-blue-200 text-sm leading-relaxed">
+                            The most beautiful experience we can have is the mysterious. It is the fundamental emotion
+                            that stands at the cradle of true art and true science.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Isaac Newton -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Isaac Newton</h3>
+                        <p class="text-yellow-500 font-medium mb-4 uppercase tracking-wide text-sm">
+                            English Polymath
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Gravity explains the motions of the planets, but it cannot explain who sets the planets in motion.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mahatma Gandhi -->
+                <div class="bg-gradient-to-b from-blue-900 to-blue-800 text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2">Mohandas Karamchand Gandhi</h3>
+                        <p class="text-yellow-400 font-medium mb-4 uppercase tracking-wide text-sm">
+                            Indian Lawyer
+                        </p>
+                        <p class="text-blue-200 text-sm leading-relaxed">
+                            Live as if you were to die tomorrow. Learn as if you were to live forever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== Our Team Section =================== -->
+    <section class="py-16 bg-white text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-4">
+                "Every success has a dedicated team behind it"
+                <br /><span class="text-gray-800">- The Team!</span>
+            </h2>
+            <div class="w-20 h-1 bg-blue-500 mx-auto mb-10 rounded-full"></div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dr. Jayasankar K -->
+                <div class="bg-gradient-to-b from-blue-900 to-blue-800 text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 p-8">
+                    <h4 class="text-lg font-semibold mb-2">Dr. Jayasankar K</h4>
+                    <p class="uppercase text-sm tracking-wide text-yellow-400 font-medium">
+                        Correspondent
+                    </p>
+                </div>
+
+                <!-- Ms. Sujatha Jayasankar -->
+                <div class="bg-gradient-to-b from-blue-900 to-blue-800 text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 p-8">
+                    <h4 class="text-lg font-semibold mb-2">Mrs. Sujatha Jayasankar</h4>
+                    <p class="uppercase text-sm tracking-wide text-yellow-400 font-medium">
+                        Joint Correspondent
+                    </p>
+                </div>
+                <!-- Mrs. Vanitha N -->
+                <div class="bg-gradient-to-b from-blue-900 to-blue-800 text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 p-8">
+                    <h4 class="text-lg font-semibold mb-2">Mrs. Vanitha N</h4>
+                    <p class="uppercase text-sm tracking-wide text-yellow-400 font-medium">
+                        Principal & CEO
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =================== Lightbox =================== -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeGallery()">&times;</span>
+            <h2 id="galleryTitle">Gallery</h2>
+            <img id="mainImage" src="image.png" class="main-image" alt="Gallery Image">
+
+            <div class="nav-btn prev" onclick="prevImage()">&#10094;</div>
+            <div class="nav-btn next" onclick="nextImage()">&#10095;</div>
+
+            <div id="thumbnailContainer" class="thumbs"></div>
+        </div>
+    </div>
+
+    <!-- =================== Gallery Scripts =================== -->
+    <script>
+        // ✅ Gallery image data (each category folder has one image)
+        const galleries = {
+            classroom: ["gallery/classroom/1.jpeg"],
+            yoga: ["gallery/yoga/1.jpeg"],
+            sports: ["gallery/sports/1.jpg"]
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        const lightbox = document.getElementById("lightbox");
+        const mainImage = document.getElementById("mainImage");
+        const galleryTitle = document.getElementById("galleryTitle");
+        const thumbnailContainer = document.getElementById("thumbnailContainer");
+
+        function openGallery(category) {
+            currentGallery = galleries[category];
+            currentIndex = 0;
+            galleryTitle.textContent =
+                category.charAt(0).toUpperCase() + category.slice(1).replace(/([A-Z])/g, ' $1');
+            updateImage();
+            populateThumbnails();
+            lightbox.classList.add("active");
+            document.addEventListener("keydown", handleKeyNavigation);
+        }
+
+        function closeGallery() {
+            lightbox.classList.remove("active");
+            document.removeEventListener("keydown", handleKeyNavigation);
+        }
+
+        function updateImage() {
+            mainImage.style.opacity = 0;
+            setTimeout(() => {
+                mainImage.src = currentGallery[currentIndex];
+                mainImage.style.opacity = 1;
+            }, 200);
+
+            const thumbs = thumbnailContainer.querySelectorAll("img");
+            thumbs.forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === currentIndex);
+            });
+        }
+
+        function populateThumbnails() {
+            thumbnailContainer.innerHTML = "";
+            const img = currentGallery[0];
+            if (img) {
+                const thumb = document.createElement("img");
+                thumb.src = img;
+                thumb.onclick = () => {
+                    currentIndex = 0;
+                    updateImage();
+                };
+                thumbnailContainer.appendChild(thumb);
+            }
+            updateImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateImage();
+        }
+
+        function handleKeyNavigation(e) {
+            if (e.key === "ArrowRight") nextImage();
+            else if (e.key === "ArrowLeft") prevImage();
+            else if (e.key === "Escape") closeGallery();
+        }
+    </script>
+
+    <!-- =================== Gallery Styles =================== -->
+    <style>
+        .gallery-img:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            filter: brightness(110%);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            padding: 1rem;
+        }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+        .lightbox-content {
+            backdrop-filter: blur(10px);
+            background: transparent;
+            border-radius: 1rem;
+            border: none;
+            padding: 2rem;
+            max-width: 900px;
+            width: 95%;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .main-image {
+            width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            transition: opacity 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+            .nav-btn:hover {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .thumbs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+            .thumbs img {
+                width: 60px;
+                height: 60px;
+                border-radius: 0.5rem;
+                border: 2px solid transparent;
+                transition: all 0.2s ease;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+                .thumbs img:hover,
+                .thumbs img.active {
+                    border-color: #60a5fa;
+                    transform: scale(1.1);
+                }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+            .close-btn:hover {
+                color: red;
+            }
+    </style>
+
+    <!-- 5. Bottom Footer Text -->
+    <footer class="bg-gray-900 text-white text-center py-4 text-base font-semibold">
+        Best CBSE School in Thoraipakkam | THIRUVALLUVAR VIDHYASHRAM
+    </footer>
+
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

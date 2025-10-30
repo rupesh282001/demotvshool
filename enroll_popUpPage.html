@@ -1,0 +1,770 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>THIRUVALLUVAR VIDHYASHRAM CBSE SCHOOL — Welcome</title>
+    <link rel="icon" type="image/png" href="image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+        /* ROAD */
+        .road {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: #444;
+        }
+
+        /* ROAD STRIPES */
+        .stripe {
+            position: absolute;
+            bottom: 45px;
+            width: 100px;
+            height: 10px;
+            background: #fff;
+            animation: moveStripe 2s linear infinite;
+        }
+
+        @keyframes moveStripe {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* BUS */
+        .bus {
+            position: relative;
+            bottom: 20px;
+            left: -300px;
+            width: 300px;
+            height: 120px;
+            background: #FFD700; /* classic yellow */
+            border-radius: 15px;
+            border: 3px solid #000;
+            animation: moveBus 8s linear infinite;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+        }
+
+            /* BUS FRONT BUMPER */
+            .bus::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: -10px;
+                width: 40px;
+                height: 60px;
+                background: #FFB300;
+                border-radius: 5px;
+                border: 3px solid #000;
+            }
+
+        /* BUS WINDOWS */
+        .window {
+            position: absolute;
+            top: 15px;
+            width: 50px;
+            height: 40px;
+            background: #87CEFA;
+            border: 3px solid #000;
+            border-radius: 5px;
+        }
+
+        .w1 {
+            left: 15px;
+        }
+
+        .w2 {
+            left: 75px;
+        }
+
+        .w3 {
+            left: 135px;
+        }
+
+        .w4 {
+            left: 195px;
+        }
+
+        /* DOOR */
+        .door {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            width: 50px;
+            height: 80px;
+            background: #FFC107;
+            border: 3px solid #000;
+            border-radius: 5px;
+            Admission Enquiry
+        }
+
+        /* BUS TEXT */
+        .bus-text {
+            position: absolute;
+            top: 65px;
+            left: 45px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* WHEELS */
+        .wheel {
+            position: absolute;
+            bottom: -25px;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+            border: 3px solid #333;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .front {
+            left: 40px;
+        }
+
+        .back {
+            right: 40px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes moveBus {
+            0% {
+                left: -300px;
+            }
+
+            100% {
+                left: 110%;
+            }
+        }
+
+
+        :root {
+            --accent: #0b6efd; /* blue accent */
+            --muted: #6b7280;
+            --card: #ffffff;
+            --bg: linear-gradient(180deg, #f7fbff 0%, #ffffff 60%);
+            --glass: rgba(255,255,255,0.6);
+            --radius: 18px;
+            font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            background: var(--bg);
+            color: #0f1724
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 18px rgba(10,20,40,0.06);
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .brand {
+            display: flex;
+            gap: 14px;
+            align-items: center
+        }
+
+            .brand .logo {
+                width: 56px;
+                height: 56px;
+                border-radius: 12px;
+                background: linear-gradient(135deg,var(--accent),#7c3aed);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 800;
+                font-size: 20px;
+                box-shadow: 0 6px 18px rgba(11,102,253,0.18)
+            }
+
+            .brand h1 {
+                font-size: 18px;
+                margin: 0
+            }
+
+        nav ul {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            border: 0;
+            cursor: pointer
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 460px;
+            gap: 30px;
+            align-items: center;
+            padding: 60px 0
+        }
+
+        .hero-left h2 {
+            font-size: 36px;
+            margin: 0 0 12px;
+            line-height: 1.05
+        }
+
+        .hero-left p {
+            color: var(--muted);
+            margin: 0 0 18px
+        }
+
+        .features {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .chip {
+            background: rgba(11,102,253,0.08);
+            color: var(--accent);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 13px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(15,23,36,0.06)
+        }
+
+        .hero-right {
+            position: relative
+        }
+
+        .school-img {
+            width: 100%;
+            height: 360px;
+            border-radius: 14px;
+            object-fit: cover;
+            display: block
+        }
+
+        /* Highlights row */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+            margin-top: 22px
+        }
+
+        .highlight {
+            padding: 14px;
+            border-radius: 12px;
+            background: linear-gradient(180deg,#fff,#f7faff);
+            text-align: center
+        }
+
+            .highlight h3 {
+                margin: 6px 0 0
+            }
+
+            .highlight p {
+                margin: 6px 0 0;
+                color: var(--muted);
+                font-size: 13px
+            }
+
+        /* About & Fees */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 26px;
+            margin: 48px 0
+        }
+
+        .about p {
+            color: var(--muted);
+            line-height: 1.65
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px
+        }
+
+            .fee-table td, .fee-table th {
+                padding: 10px;
+                border-bottom: 1px solid #f1f5f9
+            }
+
+            .fee-table th {
+                text-align: left;
+                color: var(--muted);
+                font-weight: 600
+            }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+            .gallery img {
+                width: calc(33.333% - 8px);
+                border-radius: 10px;
+                height: 100%;
+                object-fit: cover
+            }
+
+        /* Admission form */
+        form {
+            display: grid;
+            gap: 12px
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #e6eef9;
+            font-size: 14px
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        footer {
+            padding: 36px 0;
+            color: var(--muted)
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: linear-gradient(90deg,#0b6efd22,#7c3aed11);
+            padding: 18px;
+            border-radius: 14px
+        }
+
+        /* Responsive */
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr
+            }
+
+            .highlights {
+                grid-template-columns: repeat(2,1fr)
+            }
+
+            .gallery img {
+                width: calc(50% - 8px)
+            }
+        }
+
+        @media (max-width:520px) {
+            .nav ul {
+                display: none
+            }
+
+            .hero-left h2 {
+                font-size: 24px
+            }
+
+            .brand h1 {
+                font-size: 16px
+            }
+
+            .gallery img {
+                width: 100%
+            }
+        }
+
+        /* small animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeUp .8s ease forwards
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="brand">
+
+                <div>
+                    <h1>THIRUVALLUVAR VIDHYASHRAM</h1>
+                    <div style="font-size:12px;color:var(--muted);margin-top:2px">CBSE | Co-educational | Nursery — Grade 9</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#FeesStructure">Fees</a></li>
+                    <li><a href="blog.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display:flex;gap:10px;align-items:center">
+                <a class="btn" href="index.html">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="admission" class="card" style="padding:22px;margin-bottom:26px">
+            <h2>Admission Form</h2>
+            <p style="color:var(--muted)">Fill the form below and our admissions team will contact you. </p>
+
+            <form onsubmit="handleSubmit(event)">
+                <div class="grid-2">
+                    <input required name="name" placeholder="Parent / Guardian Name">
+                    <input required name="child" placeholder="Child's Name">
+                </div>
+                <div class="grid-2">
+                    <input required name="phone" type="tel" placeholder="Phone (+91)" pattern="[0-9]{10}">
+                    <input required name="email" type="email" placeholder="Email">
+                </div>
+                <div class="grid-2">
+                    <select name="grade" required>
+                        <option value="">Grade applying for</option>
+                        <option>Nursery</option>
+                        <option>KG</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                    <input name="dob" type="date" placeholder="Child DOB">
+                </div>
+                <textarea name="notes" rows="3" placeholder="Any special notes (medical, transport needs)"></textarea>
+
+                <div style="display:flex;gap:10px;align-items:center">
+                    <button class="btn" type="submit">Send Enquiry</button>
+                    <small style="color:var(--muted)">or call <strong>+91 9626137777</strong></small>
+                </div>
+            </form>
+        </section>
+
+
+        <section class="hero">
+            <div class="hero-left card fade-up" style="padding:28px">
+                <div class="chip">Admission Open 2025-26</div>
+                <h2>Empowering young minds through excellence in education</h2>
+                <p>Our Vidhyashram will attract young mind who are committed to upholding the greatest standards of integrity and academic performance and who are goal-oriented, critical thinkers, and leaders</p>
+
+                <div class="features" style="margin-top:18px">
+                    <div style="min-width:160px">
+                        <strong>Why choose us?</strong>
+                        <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+                            <li>VR Class – Experience immersive and interactive learning.</li>
+
+                            <li>Robotics Lab – Foster creativity, innovation, and problem-solving skills.</li>
+
+                            <li>Music Room – Develop talent and appreciation for the arts.</li>
+
+                            <li>Smart Class – Engage with technology-driven lessons.</li>
+
+                            <li>Library & Laboratories – Explore knowledge and hands-on scientific learning.</li>
+
+                            <li>Art Studio – Encourage imagination and artistic expression.</li>
+
+                            <li>Live GPS Transport – Ensure safety and convenience in commuting.</li>
+
+                            <li>Sports & Extra-Curricular Activities – Promote physical fitness and overall development.</li>
+
+                            <li>Large Football Turf & Canteen Within Campus – Support recreation and healthy meals.</li>
+
+                            <li>Interactive Learning & Digital Resources – Enhance understanding through modern teaching tools.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top:20px;display:flex;gap:12px">
+                    <a class="btn" href="#admission">Apply Now</a>
+                    <a style="padding:10px 16px;border-radius:12px;border:1px solid #e4edff;font-weight:600" href="#fees">View Fees</a>
+                </div>
+
+                <div class="highlights">
+                    <div class="highlight">
+                        <div style="font-size:20px;font-weight:800;color:var(--accent)">235:25</div>
+                        <h3>Student–Teacher</h3>
+                        <p>Personalised attention</p>
+                    </div>
+                    <div class="highlight">
+                        <div style="font-size:20px;font-weight:800;color:#16a34a">99%</div>
+                        <h3>Happy Parents</h3>
+                        <p>Community-driven progress</p>
+                    </div>
+                    <div class="highlight">
+                        <div style="font-size:20px;font-weight:800;color:#f97316">15+</div>
+                        <h3>Co-curricular</h3>
+                        <p>Clubs & activities</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-right">
+                <div class="card" style="padding:14px">
+                    <img class="school-img" src="newad10.jpg" alt="School Campus">
+
+                    <div style="display:flex;gap:12px;margin-top:12px">
+                        <div style="flex:1">
+                            <h3 style="margin:6px 0">Open Hours</h3>
+                            <p style="margin:0;color:var(--muted)">Mon - Sat: 8:30 AM — 6:00 PM</p>
+                        </div>
+                        <div style="width:110px;text-align:right">
+                            <h3 style="margin:6px 0">Contact</h3>
+                            <p style="margin:0;color:var(--muted)">+91 96261 37777</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                    <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+                        <strong>Transport</strong>
+                        <small style="color:var(--muted)">Safe routes, GPS-enabled</small>
+                        <a href="#contact" style="margin-top:8px">Request Route</a>
+                    </div>
+                    <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+                        <strong>Infrastructure</strong>
+                        <small style="color:var(--muted)">Labs, playground & Greenberg</small>
+                        <a href="#gallery" style="margin-top:8px">View Photos</a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section id="about" class="card fade-up" style="padding:22px;margin-bottom:10px">
+            <div class="two-col">
+                <div class="about">
+                    <h2>Our Vision</h2>
+                    <p>“To uproot the education poverty and to develop a sphere of confidence to become responsible citizen, who seek to achieve their full potential”</p>
+
+                    <h3 style="margin-top:12px">Our Mission</h3>
+                    <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+                        <li> Focus to come up with a safe, joyous place where everyone is known and honored and where differing needs are granted, accepted and met.</li>
+                        <li> Encourage each child to be individualistic and develop a sense of responsibility for themselves and respect for others in and outside the campus.</li>
+                        <li> Prepare young people with the skills and mindset to succeed and then take on the world.</li>
+                        <li> Enrich the tradition of excellence in this transforming world by building a more inclusive curriculum, addressing a range of learning styles, offering a wide array of diversity efforts and programs, and by participating in the wide company.</li>
+                    </ul>
+
+
+
+                    <div style="margin-top:12px">
+                        <strong>Programs</strong>
+                        <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+                            <li>Smart Labs</li>
+                            <li>Performing & Visual Arts</li>
+                            <li>Sports & Yoga</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="card" style="padding:18px">
+                    <h3 id="FeesStructure">Fees Structure Play School</h3>
+                    <table class="fee-table">
+                        <tr><th>Item</th><th style="text-align:right">Amount (₹)</th></tr>
+                        <tr><td>Admission (one-time)</td><td style="text-align:right">25,000</td></tr>
+                        <tr><td>Tuition Fee</td><td style="text-align:right">25,000</td></tr>
+                        <tr><td>Portfolio & Stationery</td><td style="text-align:right">5,000</td></tr>
+                        <tr><td>Uniform</td><td style="text-align:right">5,000</td></tr>
+                        <tr><th>Total Fees</th><th style="text-align:right">₹60,000</th></tr>
+                    </table>
+
+                    <div style="margin-top:12px;display:flex;gap:8px">
+                        <a class="btn" href="#admission">Download Fee Brochure</a>
+                        <a style="padding:10px;border-radius:12px;border:1px solid #e4edff;font-weight:600" href="#contact">Contact Office</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="gallery" style="margin:18px 0">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="newad1.png" alt="students">
+                <img src="newad2.png" alt="students">
+                <img src="newad3.png" alt="students">
+                <img src="newad4.png" alt="students">
+                <img src="newad5.png" alt="students">
+                <img src="newad6.jpg" alt="students">
+                <img src="newad7.png" alt="students">
+                <img src="newad8.jpg" alt="students">
+                <img src="newad9.jpg" alt="students">
+                <img src="newad13.png" alt="students">
+                <img src="newad11.jpg" alt="students">
+                <img src="newad12.png" alt="students">
+
+
+            </div>
+        </section>
+
+
+
+
+
+        <!-- BUS (Clickable) -->
+        <div class="bus" onclick="location.href='#admission'">
+            <div class="window w1"></div>
+            <div class="window w2"></div>
+            <div class="window w3"></div>
+            <div class="window w4"></div>
+            <div class="door"></div>
+            <div class="wheel front"></div>
+            <div class="wheel back"></div>
+            <div class="bus-text">ADMISSIONS OPEN</div>
+        </div>
+
+
+
+
+        <section id="contact" class="card" style="padding:22px;margin-bottom:46px">
+            <h2>Contact & Location</h2>
+            <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+                <div>
+                    <p style="color:var(--muted)">Office: NO: 4/4A, Corporation Road, Perungudi OMR, Near World Trade Centre, Chennai – 600096.</p>
+                    <p style="color:var(--muted)"><strong>Phone:</strong> +91 9626137777 &nbsp; | &nbsp; <strong>Email:</strong> admin@thiruvalluvarvidhyashram.school</p>
+
+                    <div style="margin-top:12px" class="cta">
+                        <div>
+                            <strong>Visit us</strong>
+                            <div style="color:var(--muted)">Campus tours available Mon–Fri 9 AM — 12 PM</div>
+                        </div>
+                        <a class="btn" href="https://maps.app.goo.gl/VMTjUhY5sxiuNDfE6">Visit</a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <iframe title="school-map" src="https://www.google.com/maps?q=Chennai&output=embed" style="width:100%;height:220px;border:0;border-radius:12px"></iframe>
+
+
+
+                </div>
+        </section>
+
+        <footer>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+                <div>
+                    <strong>THIRUVALLUVAR VIDHYASHRAM</strong>
+                    <div style="color:var(--muted);font-size:13px">© <span id="year"></span> All rights reserved.</div>
+                </div>
+                <div style="color:var(--muted);font-size:13px">Designed by IT</div>
+            </div>
+        </footer>
+    </main>
+
+
+    <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = e.target;
+      const data = new FormData(f);
+      const obj = {};
+      for(const [k,v] of data.entries()) obj[k]=v;
+
+      // Simple demo action: open user's mail client with prefilled content
+      const subject = encodeURIComponent('Admission Enquiry — ' + obj.child + ' (' + obj.grade + ')');
+      const body = encodeURIComponent(
+        'Parent: ' + obj.name + '\n' +
+        'Child: ' + obj.child + '\n' +
+        'Grade: ' + obj.grade + '\n' +
+        'Phone: ' + obj.phone + '\n' +
+        'Email: ' + obj.email + '\n\nNotes:\n' + (obj.notes || '')
+      );
+
+      // Change the email address below to the school's real admissions email or replace this whole block with a fetch() call to your backend.
+      const mailto = 'mailto:itsolution.thempcoop@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = mailto;
+
+      // If you prefer to submit to a backend endpoint, replace above with fetch('/api/admissions',{method:'POST',body:JSON.stringify(obj)})...
+    }
+    </script>
+</body>
+</html>
