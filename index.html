@@ -117,9 +117,10 @@
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         <span>admin@thiruvalluvarvidhyashram.school</span>
                     </div>
-                    <button class="rounded-full px-3 py-1 bg-white text-blue-900 hover:bg-gray-200 transition whitespace-nowrap">
+                    <a href="https://octopod.co.in/login" target="_blank"
+                       class="rounded-full px-3 py-1 bg-white text-blue-900 hover:bg-gray-200 transition whitespace-nowrap">
                         Login
-                    </button>
+                    </a>
                     <button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-blue-900 transition whitespace-nowrap">
                         Doubt Connect
                     </button>
@@ -401,36 +402,42 @@
                             </select>
                         </h2>
 
-                        <form class="grid grid-cols-2 gap-4 text-sm">
+                        <!-- 🔹 FORM START -->
+                        <form id="admissionForm" class="grid grid-cols-2 gap-4 text-sm">
 
                             <!-- Parent Name -->
                             <div class="col-span-1">
                                 <label for="parentName" class="block font-medium mb-1 text-xs">Parent Name *</label>
-                                <input type="text" id="parentName" placeholder="Parent Name" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <input type="text" name="parent" id="parentName" placeholder="Parent Name" required
+                                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                             </div>
 
                             <!-- Child Name -->
                             <div class="col-span-1">
                                 <label for="childName" class="block font-medium mb-1 text-xs">Child Name *</label>
-                                <input type="text" id="childName" placeholder="Child Name" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <input type="text" name="child" id="childName" placeholder="Child Name" required
+                                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                             </div>
 
                             <!-- Mobile No -->
                             <div class="col-span-1">
                                 <label for="mobileNo" class="block font-medium mb-1 text-xs">Mobile No *</label>
-                                <input type="tel" id="mobileNo" placeholder="Mobile No" required class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <input type="tel" name="phone" id="mobileNo" placeholder="Mobile No" required
+                                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                             </div>
 
                             <!-- Email -->
                             <div class="col-span-1">
                                 <label for="email" class="block font-medium mb-1 text-xs">Email</label>
-                                <input type="email" id="email" placeholder="your@email.com" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <input type="email" name="email" id="email" placeholder="your@email.com"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                             </div>
 
                             <!-- Current Grade -->
                             <div class="col-span-1 relative select-arrow">
-                                <label for="Current Grade" class="block font-medium mb-1 text-xs">Current Grade *</label>
-                                <select id="grade" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <label for="currentGrade" class="block font-medium mb-1 text-xs">Current Grade *</label>
+                                <select name="current_grade" id="currentGrade" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                                     <option value="">Grade</option>
                                     <option>Play School</option>
                                     <option>LKG</option>
@@ -447,10 +454,11 @@
                                 </select>
                             </div>
 
-                            <!-- Select Grade -->
+                            <!-- Seeking Grade -->
                             <div class="col-span-1 relative select-arrow">
-                                <label for="Select Grade" class="block font-medium mb-1 text-xs">Seeking For Grade *</label>
-                                <select id="grade" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
+                                <label for="seekingGrade" class="block font-medium mb-1 text-xs">Seeking For Grade *</label>
+                                <select name="seeking_grade" id="seekingGrade" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
                                     <option value="">Grade</option>
                                     <option>Play School</option>
                                     <option>LKG</option>
@@ -466,17 +474,6 @@
                                 </select>
                             </div>
 
-                            <!-- Select Grade -->
-                            <!--<div class="col-span-1 relative select-arrow">
-                                <label for="grade" class="block font-medium mb-1 text-xs">Select Grade *</label>
-                                <select id="grade" required class="w-full px-3 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:border-red-800 focus:ring-1 focus:ring-red-800 transition">
-                                    <option value="">Grade</option>
-                                    <option>Nursery</option>
-                                    <option>LKG</option>
-                                    <option>Class 1</option>
-                                </select>
-                            </div>-->
-
                             <!-- Submit Button -->
                             <div class="col-span-2 flex justify-center">
                                 <button type="submit"
@@ -488,6 +485,35 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- 🔹 SCRIPT SECTION -->
+                <script>
+                    document.getElementById("admissionForm").addEventListener("submit", function (e) {
+                        e.preventDefault();
+
+                        const f = e.target;
+                        const data = new FormData(f);
+                        const obj = {};
+                        for (const [k, v] of data.entries()) obj[k] = v;
+
+                        // Build email subject
+                        const subject = encodeURIComponent(`Admission Enquiry — ${obj.child} (${obj.seeking_grade})`);
+
+                        // Build email body
+                        const body = encodeURIComponent(
+                            `Parent Name: ${obj.parent}\n` +
+                            `Child Name: ${obj.child}\n` +
+                            `Current Grade: ${obj.current_grade}\n` +
+                            `Seeking Grade: ${obj.seeking_grade}\n` +
+                            `Phone: ${obj.phone}\n` +
+                            `Email: ${obj.email || 'N/A'}`
+                        );
+
+                        // Replace this email when moving to production
+                        const mailto = `mailto:rupesh.thempcoop@gmail.com?subject=${subject}&body=${body}`;
+                        window.location.href = mailto;
+                    });
+                </script>
 
             </div>
         </div>
