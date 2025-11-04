@@ -164,9 +164,9 @@
                     <button class="rounded-full px-3 py-1 bg-white text-blue-900 hover:bg-gray-200 transition whitespace-nowrap">
                         Login
                     </button>
-                    <button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-blue-900 transition whitespace-nowrap">
+                    <!--<button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-blue-900 transition whitespace-nowrap">
                         Doubt Connect
-                    </button>
+                    </button>-->
                 </div>
 
                 <!-- Mobile Hamburger -->
@@ -367,7 +367,7 @@
     <script>
         // ✅ Only one image per folder — no need for extension looping
         const galleries = {
-            classroom: ["gallery/classroom/1.jpeg"],
+            classroom: ["gallery/classroom/1.jpeg", "gallery/classroom/newad8.jpg"],
             yoga: ["gallery/yoga/1.jpeg"],
             sports: ["gallery/sports/1.jpg"]
         };
@@ -409,23 +409,23 @@
             });
         }
 
-        // ✅ Only one image — no iteration needed
+        // Multiple images will be populated
         function populateThumbnails() {
             thumbnailContainer.innerHTML = "";
-            const img = currentGallery[0];
 
-            if (img) {
+            currentGallery.forEach((img, index) => {
                 const thumb = document.createElement("img");
                 thumb.src = img;
                 thumb.onclick = () => {
-                    currentIndex = 0;
+                    currentIndex = index;
                     updateImage();
                 };
                 thumbnailContainer.appendChild(thumb);
-            }
+            });
 
             updateImage();
         }
+
 
         function nextImage() {
             currentIndex = (currentIndex + 1) % currentGallery.length;
@@ -445,6 +445,15 @@
         }
     </script>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+        © 2025 Thiruvalluvar Vidhyashram School. All Rights Reserved.
+    </footer>
+
+    <!-- Chat Bubble added using the embedded script from chatBase-->
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "0j4rycMasRkfQLqw7erqR"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
 
 </body>
 </html>
