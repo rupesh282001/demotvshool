@@ -77,9 +77,9 @@
                     <button class="rounded-full px-3 py-1 bg-white text-blue-900 hover:bg-gray-200 transition whitespace-nowrap">
                         Login
                     </button>
-                    <button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-blue-900 transition whitespace-nowrap">
+                    <!--<button class="rounded-full px-3 py-1 border border-white hover:bg-white hover:text-blue-900 transition whitespace-nowrap">
                         Doubt Connect
-                    </button>
+                    </button>-->
                 </div>
 
                 <!-- Mobile Hamburger -->
@@ -331,9 +331,14 @@
 
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-5 text-sm mt-auto w-full">
-        © 2025 Thiruvalluvar Vidhyashram CBSE School. All Rights Reserved.
+    <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+        © 2025 Thiruvalluvar Vidhyashram School. All Rights Reserved.
     </footer>
+
+    <!-- Chat Bubble added using the embedded script from chatBase-->
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "0j4rycMasRkfQLqw7erqR"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
 
     <!-- Mobile Toggle Script -->
     <script>
@@ -343,3 +348,4 @@
     </script>
 </body>
 </html>
+
